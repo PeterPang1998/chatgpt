@@ -1,6 +1,6 @@
+#!/usr/bin/env python3 
 import openai
 from flask import Flask, request, render_template
-
 # create the api key
 openai.api_key = "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"
 
@@ -29,4 +29,4 @@ def get_Chat_Response():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0',port="8400",debug=True)
