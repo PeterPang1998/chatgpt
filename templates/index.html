@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OpenAi chatGPT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css">
+</head>
+<body>
+<div class = "container">
+    <h2>ChatGPT</h2>
+    <p>All you can ask!</p>
+
+    <hr>
+    <div class="panel-panel-default">
+        <div class="panel-heading">Chat Messages</div>
+        <div class="panel-body" id="chat">
+            <ul class="list-group">
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="input group">
+        <input type="text" id="userInput" class="form-control">
+        <span class="input-group-btn">
+            <button class="btn btn-default" id="submit">Submit</button>
+        </span>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+    <script>
+       $("#submit").click(function(){
+       var userInput = $("#userInput").val();
+       $.get("/get?msg="+userInput,function(data){
+           $("#chat").append("<li class='list-group-item'> <b>You:</b>"+userInput+"</li>")
+           $("#chat").append("<li class='list-group-item'> <b>OpenAI:</b>"+data+"</li>")
+       });
+});
+    </script>
+</body>
+</html>
