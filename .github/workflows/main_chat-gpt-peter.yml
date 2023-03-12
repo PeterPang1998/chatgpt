@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'chat-gpt-peter'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1DFC6F28DDFC4C45A4891C9D40E1BF50 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6396212F62644842B0382F98540CB86E }}
